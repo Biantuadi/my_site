@@ -80,4 +80,44 @@ const PresentationStyled = styled.div`
 
     animation: slideInFromRight 1.4s ease-in-out;
   }
+
+  @media (max-width: 1216px) and (min-width: 995px) {
+
+    h1 {
+      font-size: calc(50px * 0.8);
+    }
+
+    .button {
+      font-size: calc(18px * 0.8);
+    }
+  }
+
+  @media (max-width: 995px) and (min-width: 768px) {
+    width: 100%;
+
+    h1 {
+      font-size: calc(50px * 0.7);
+      
+
+    }
+
+    .button {
+      font-size: calc(18px * 0.7);
+    }
+  }
+
+  @media (max-width: 767px)  {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+
+    h1 {
+      font-size: calc(50px * 0.6);
+    }
+
+    .button {
+      font-size: calc(18px * 0.6);
+    }
+
+  }
 `;

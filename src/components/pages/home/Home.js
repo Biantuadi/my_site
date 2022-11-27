@@ -12,7 +12,6 @@ export default function Home() {
 
       <main>
         <Presentation />
-        <h2 className="uniqueAbsolue">Recent <span>Project</span></h2>
         <img
           src="https://odoocdn.com/openerp_website/static/src/img/2020/website/owb_top_shapes.svg"
           alt=""
@@ -32,7 +31,7 @@ const HomeStyle = styled.div`
     margin: 0 auto;
     display: flex;
     height: 100%;
-    text-align: center;
+    justify-content: space-between;
 
     h2.uniqueAbsolue {
       font-size: 35px;
@@ -47,8 +46,20 @@ const HomeStyle = styled.div`
     img {
       z-index: -2;
       position: absolute;
-      top: 55px;
       right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      
+    
+      /* top: 55px; */
+      right: 0;
+      width: 50%;
+    }
+
+    @media (max-width: 1300px) and (min-width: 1024px){
+      h2.uniqueAbsolue {
+        right: 200px;
+      }
     }
   }
 `;
