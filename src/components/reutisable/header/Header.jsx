@@ -43,4 +43,11 @@ const HeaderStyled = styled.header`
       font-weight: 500;
     }
   }
+
+  @media (max-width: 476px) {
+    .marge_auto {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 `;
