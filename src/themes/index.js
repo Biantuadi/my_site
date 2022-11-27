@@ -4,6 +4,7 @@ const colors = {
     tertiary: '#212529',
     bground: '#F8F9FA',
     lighten_grey: '#fcfdfd',
+    white: '#fff',
 
 }
 
