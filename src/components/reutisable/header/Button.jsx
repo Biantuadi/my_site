@@ -12,7 +12,7 @@ const ButtonStyled = styled.button`
       padding: 15px;
       font-weight: 700;
       color: ${theme.colors.white};
-      background-color: #017e84;
+      background-color: ${theme.colors.lighten_primary};
       border: none;
       font-size: 17px;
       border-radius: 5px;

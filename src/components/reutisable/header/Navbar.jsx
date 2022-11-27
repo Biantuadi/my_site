@@ -44,13 +44,13 @@ const NavbarStyled = styled.ul`
     transition: all 0.3s linear;
 
     &:hover {
-      color: ${theme.colors.primary};
+      color: ${theme.colors.lighten_primary};
       font-weight: 500;
     }
 }
 
   .active {
-    color: ${theme.colors.primary};
+    color: ${theme.colors.lighten_primary};
     font-weight: 500;
   }
 `;

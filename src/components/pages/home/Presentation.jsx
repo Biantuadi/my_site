@@ -1,8 +1,15 @@
 import styled from "styled-components";
 import { theme } from "../../../themes";
 import Button from "../../reutisable/header/Button";
+import { useTypewriter } from "react-simple-typewriter";
 
 export default function Presentation() {
+  // typewriter
+  const { text } = useTypewriter({
+    words: ["Créatif", "Curieux", "Dévoué"],
+    loop: 0,
+  });
+
   return (
     <PresentationStyled>
       <h1>
@@ -12,7 +19,7 @@ export default function Presentation() {
       <p>ReactJs. Laravel. NodeJs.</p>
 
       <div className="button">
-        <Button label="Voir mon CV" /> - Je suis <span>Dévoué_</span>
+        <Button label="Voir mon CV" /> - Je suis <span>{text}_</span>
       </div>
     </PresentationStyled>
   );
@@ -39,7 +46,7 @@ const PresentationStyled = styled.div`
       }
       50% {
         opacity: 0.5;
-      } 
+      }
       100% {
         transform: translateX(0);
         opacity: 1;
@@ -61,12 +68,13 @@ const PresentationStyled = styled.div`
       0% {
         transform: translateX(100%);
         opacity: 0;
-      }50% {
+      }
+      50% {
         opacity: 0.5;
-      } 
+      }
       100% {
         transform: translateX(0);
-        
+        opacity: 1;
       }
     }
 

@@ -35,6 +35,7 @@ const DemoStyled = styled.div`
   height: 500px;
   border-radius: 50%;
   background-color: white;
+  text-align: center;
   z-index: -1;
   animation: demo_crazee_burger 1s ease-in-out;
   @keyframes demo_crazee_burger {
