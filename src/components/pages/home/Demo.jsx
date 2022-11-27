@@ -1,14 +1,29 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 export default function Demo() {
+  // Faire apparaître une div après un délai de quelques 5 secondes
+
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 2000);
+  });
+
   return (
-    <DemoStyled>
-      <img
-        src="/demo_crazee_burger.gif"
-        alt="demo_crazee_burger"
-        className="demo_crazee_burger"
-      />
-    </DemoStyled>
+    <>
+      {show && (
+        <DemoStyled>
+          <img
+            src="/demo_crazee_burger.gif"
+            alt="demo_crazee_burger"
+            className="demo_crazee_burger"
+          />
+        </DemoStyled>
+      )}
+    </>
   );
 }
 
@@ -21,6 +36,20 @@ const DemoStyled = styled.div`
   border-radius: 50%;
   background-color: white;
   z-index: -1;
+  animation: demo_crazee_burger 1s ease-in-out;
+  @keyframes demo_crazee_burger {
+    0% {
+      top: -450px;
+      opacity: 0;
+    } 
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      top: 147px;
+      opacity: 1;
+    }
+  }
 
   img {
     width: 465px;
