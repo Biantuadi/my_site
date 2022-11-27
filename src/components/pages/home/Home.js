@@ -1,5 +1,9 @@
+import Header from "../../reutisable/header/Header";
+
 export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <div className="home">
+      <Header />
+    </div>
+  );
 }
