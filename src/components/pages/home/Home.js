@@ -8,13 +8,14 @@ export default function Home() {
   return (
     <HomeStyle className="home">
       <Header />
-      <Demo />
 
       <main>
+        <Demo />
         <Presentation />
         <img
           src="https://odoocdn.com/openerp_website/static/src/img/2020/website/owb_top_shapes.svg"
           alt=""
+          className="animes"
         />
       </main>
     </HomeStyle>
@@ -35,31 +36,33 @@ const HomeStyle = styled.div`
 
     h2.uniqueAbsolue {
       font-size: 35px;
-      position: absolute ;
+      position: absolute;
       right: 300px;
 
-      span{
+      span {
         color: ${theme.colors.secondary};
       }
     }
 
-    img {
+    img.animes {
       z-index: -2;
       position: absolute;
       right: 0;
       top: 50%;
       transform: translateY(-50%);
-      
-    
+
       /* top: 55px; */
       right: 0;
       width: 50%;
     }
 
-    @media (max-width: 1300px) and (min-width: 1024px){
-      h2.uniqueAbsolue {
-        right: 200px;
-      }
+    @media (max-width: 860px) {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 `;

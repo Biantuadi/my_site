@@ -106,18 +106,24 @@ const PresentationStyled = styled.div`
     }
   }
 
-  @media (max-width: 767px)  {
+  @media (max-width: 860px)  {
     width: 100%;
     text-align: center;
-    height: 100%;
+    justify-content: center;
+    align-items: center;
 
     h1 {
       font-size: calc(50px * 0.6);
     }
 
     .button {
-      font-size: calc(18px * 0.6);
+
+      button {
+
+        font-size: calc(18px * 0.7);
+      }
     }
 
   }
+
 `;
