@@ -49,8 +49,5 @@ const HeaderStyled = styled.header`
       flex-direction: column;
       align-items: center;
     }
-
-    
-
   }
 `;
