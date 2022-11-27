@@ -122,7 +122,7 @@ const PresentationStyled = styled.div`
 
         font-size: calc(18px * 0.7);
       }
-    }
+    } 
 
   }
 
