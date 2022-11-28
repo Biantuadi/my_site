@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../../../themes";
 import Navbar from "./Navbar";
@@ -7,11 +6,9 @@ export default function Header() {
   return (
     <HeaderStyled>
       <div className="marge_auto">
-        <Link to="/" className="logo">
-          <h1>
-            <span>B</span>kev
-          </h1>
-        </Link>
+        <h1>
+          <span>B</span>kev
+        </h1>
 
         <Navbar />
       </div>
