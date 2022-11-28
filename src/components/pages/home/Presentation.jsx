@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../../themes";
 import Button from "../../reutisable/header/Button";
 import { useTypewriter } from "react-simple-typewriter";
+import SocialMedias from "./SocialMedias";
 
 export default function Presentation() {
   // typewriter
@@ -16,11 +17,16 @@ export default function Presentation() {
         Developpeur <span>Web</span>,<br /> A la recherche d’une
         <br /> nouvelle opportunité
       </h1>
-      <p><span>K</span>evin. <span>B</span>eni. <span>B</span>iantuadi.</p>
+      <p>
+        <span>K</span>evin. <span>B</span>eni. <span>B</span>iantuadi.
+      </p>
 
       <div className="button">
         <Button label="Voir mon CV" /> - Je suis <span>{text}_</span>
       </div>
+
+      <br />
+      <SocialMedias />
     </PresentationStyled>
   );
 }
@@ -56,7 +62,7 @@ const PresentationStyled = styled.div`
     animation: slideInFromLeft 1.4s ease-in-out;
   }
 
-  span{
+  span {
     color: ${theme.colors.secondary};
   }
 
@@ -90,7 +96,6 @@ const PresentationStyled = styled.div`
   }
 
   @media (max-width: 1216px) and (min-width: 995px) {
-
     h1 {
       font-size: calc(50px * 0.8);
     }
@@ -105,8 +110,6 @@ const PresentationStyled = styled.div`
 
     h1 {
       font-size: calc(50px * 0.7);
-      
-
     }
 
     .button {
@@ -114,29 +117,26 @@ const PresentationStyled = styled.div`
     }
   }
 
-  @media (max-width: 860px)  {
+  @media (max-width: 860px) {
     width: 100%;
     height: 70%;
     text-align: center;
     justify-content: flex-end;
+    align-items: center;
 
     h1 {
       font-size: calc(50px * 0.6);
     }
 
     .button {
-
       button {
-
         font-size: calc(18px * 0.7);
       }
-    } 
-
+    }
   }
 
   @media screen and (max-height: 700px) {
     height: 70%;
     justify-content: center;
   }
-
 `;
