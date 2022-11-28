@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../../../themes";
 import Navbar from "./Navbar";
@@ -6,9 +7,11 @@ export default function Header() {
   return (
     <HeaderStyled>
       <div className="marge_auto">
-        <h1>
-          <span>B</span>kev
-        </h1>
+        <Link to="/" className="logo">
+          <h1>
+            <span>B</span>kev
+          </h1>
+        </Link>
 
         <Navbar />
       </div>
@@ -37,6 +40,7 @@ const HeaderStyled = styled.header`
     font-weight: 400;
     font-size: 23px;
     line-height: 24px;
+    cursor: pointer;
 
     span {
       color: ${theme.colors.secondary};

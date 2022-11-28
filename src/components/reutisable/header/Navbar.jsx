@@ -42,6 +42,7 @@ const NavbarStyled = styled.ul`
     color: ${theme.colors.tertiary};
     font-size: 16.8px;
     transition: all 0.3s linear;
+    font-weight: 400;
 
     &:hover {
       color: ${theme.colors.lighten_primary};
