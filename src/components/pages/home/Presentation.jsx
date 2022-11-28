@@ -134,4 +134,9 @@ const PresentationStyled = styled.div`
 
   }
 
+  @media screen and (max-height: 700px) {
+    height: 70%;
+    justify-content: center;
+  }
+
 `;

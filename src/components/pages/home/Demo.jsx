@@ -129,4 +129,8 @@ const DemoStyled = styled.div`
     }
     animation: responsive_animation 1s ease-in-out;
   }
+
+  @media screen and (max-width: 860px) and  (max-height: 700px) {
+    display: none;
+  }
 `;
