@@ -38,7 +38,7 @@ const DemoStyled = styled.div`
   background-color: white;
   text-align: center;
   z-index: -1;
-  animation: demo_crazee_burger 1s ease-in-out;
+  animation: demo_crazee_burger 2s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,16 +93,19 @@ const DemoStyled = styled.div`
 
     @keyframes responsive_animation {
       0% {
-        transform: scale( 1.5);
+        transform: scale( 0.5 );
+        opacity: 1;
       }
       50% {
-        transform: scale( 1.2);
+        transform: scale( 1.2 );
+        opacity: 1;
       } 
       100% {
         transform: scale( 1);
+        opacity: 1;
       }
     }
-    animation: responsive_animation 1s ease-in-out;
+    animation: responsive_animation 2s ease-in-out;
   }
 
   @media (max-width: 476px) {
@@ -112,13 +115,16 @@ const DemoStyled = styled.div`
 
     @keyframes responsive_animation {
       0% {
-        transform: scale( 1.5);
+        transform: scale( 0.5 );
+        opacity: 1;
       }
       50% {
-        transform: scale( 1.2);
+        transform: scale( 1.2 );
+        opacity: 1;
       } 
       100% {
         transform: scale( 1);
+        opacity: 1;
       }
     }
     animation: responsive_animation 1s ease-in-out;

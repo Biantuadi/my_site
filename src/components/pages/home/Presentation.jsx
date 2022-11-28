@@ -16,7 +16,7 @@ export default function Presentation() {
         Developpeur <span>Web</span>,<br /> A la recherche d’une
         <br /> nouvelle opportunité
       </h1>
-      <p>ReactJs. Laravel. NodeJs.</p>
+      <p><span>K</span>evin. <span>B</span>eni. <span>B</span>iantuadi.</p>
 
       <div className="button">
         <Button label="Voir mon CV" /> - Je suis <span>{text}_</span>
@@ -36,7 +36,7 @@ const PresentationStyled = styled.div`
     font-weight: 500;
     font-size: 50px;
     span {
-      color: ${theme.colors.secondary};
+      color: ${theme.colors.primary};
     }
 
     @keyframes slideInFromLeft {
@@ -54,6 +54,14 @@ const PresentationStyled = styled.div`
     }
 
     animation: slideInFromLeft 1.4s ease-in-out;
+  }
+
+  span{
+    color: ${theme.colors.secondary};
+  }
+
+  p {
+    font-size: 19px;
   }
 
   .button {
