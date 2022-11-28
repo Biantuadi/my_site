@@ -84,8 +84,8 @@ const DemoStyled = styled.div`
     top: 10%;
     transform: translateY(0);
 
-    width: calc(500px * 0.5);
-    height: calc(500px * 0.5);
+    width: calc(500px * 0.6);
+    height: calc(500px * 0.6);
 
     img {
       border-radius: 0;
@@ -106,8 +106,8 @@ const DemoStyled = styled.div`
   }
 
   @media (max-width: 476px) {
-    width: calc(500px * 0.4);
-    height: calc(500px * 0.4);
+    width: calc(500px * 0.5);
+    height: calc(500px * 0.5);
     top: 20%;
 
     @keyframes responsive_animation {

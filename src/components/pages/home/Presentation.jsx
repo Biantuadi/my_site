@@ -108,7 +108,7 @@ const PresentationStyled = styled.div`
 
   @media (max-width: 860px)  {
     width: 100%;
-    height: 50%;
+    height: 70%;
     text-align: center;
     justify-content: flex-end;
 
