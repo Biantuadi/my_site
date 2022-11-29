@@ -14,8 +14,8 @@ export default function Home() {
         <Presentation />
         <img
           src="https://odoocdn.com/openerp_website/static/src/img/2020/website/owb_top_shapes.svg"
-          alt=""
-          className="animes"
+          alt="animes_svg"
+          className="animes absolute"
         />
       </main>
     </HomeStyle>

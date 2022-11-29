@@ -11,6 +11,10 @@ export default function Presentation() {
     loop: 0,
   });
 
+  const openCV = () => {
+    // alert("yes");
+  };
+
   return (
     <PresentationStyled>
       <h1>
@@ -22,7 +26,8 @@ export default function Presentation() {
       </p>
 
       <div className="button">
-        <Button label="Voir mon CV" /> - Je suis <span>{text}_</span>
+        <Button label="Voir mon CV" onClick={openCV} /> - Je suis{" "}
+        <span>{text}_</span>
       </div>
 
       <br />
