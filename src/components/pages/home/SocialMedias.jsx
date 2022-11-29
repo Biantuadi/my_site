@@ -101,7 +101,7 @@ const SocialMrdiasStyled = styled.ul`
 
   .fa-envelope,
   .envelope:nth-child(1):hover span {
-   
+    animation: move 2s infinite alternate forwards;
     background: ${theme.colors.lighten_secondary};
     
     @keyframes move {
@@ -126,10 +126,6 @@ const SocialMrdiasStyled = styled.ul`
         }
       }
     }
-  }
-
-  li:nth-child(1) span {
-    animation: move 2s infinite alternate forwards;
   }
 
   .fa-github,
