@@ -2,7 +2,7 @@ const projectsData = [
   {
     id: 1,
     title: "Bubble Tea",
-    image: "./bubble-tea.png",
+    image: "./img/bubble-tea.png",
     laguages: [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png",
@@ -17,7 +17,7 @@ const projectsData = [
   {
     id: 2,
     title: "Groupomania",
-    image: "./groupomania.png",
+    image: "./img/groupomania.png",
     laguages: [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png",
       "https://www.opc-router.de/wp-content/uploads/2021/03/mongodb_thumbnail.png",
@@ -38,7 +38,7 @@ const projectsData = [
   {
     id: 3,
     title: "Crazee-Burger",
-    image: "./crazee-burger.png",
+    image: "./img/crazee-burger.png",
     laguages: [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/1200px-Npm-logo.svg.png",

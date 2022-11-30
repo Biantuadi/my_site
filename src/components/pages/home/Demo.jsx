@@ -17,7 +17,7 @@ export default function Demo() {
       {show && (
         <DemoStyled>
           <img
-            src="/demo_crazee_burger.gif"
+            src="img/demo_crazee_burger.gif"
             alt="demo_crazee_burger"
             className="demo_crazee_burger"
           />
