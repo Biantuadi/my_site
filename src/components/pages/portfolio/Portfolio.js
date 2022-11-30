@@ -15,4 +15,8 @@ const PortfolioStyled = styled.div`
   height: 100vh;
   overflow: hidden;
   font-family:"Poppins", sans-serif;
+
+  @media screen and (max-width: 1128px) {
+    overflow: auto;
+  }
 `;

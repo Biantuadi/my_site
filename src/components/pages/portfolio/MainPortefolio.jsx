@@ -18,7 +18,17 @@ const MainStyled = styled.main`
   width: 80%;
   margin: 0 auto;
   overflow: hidden;
-  height: 100%;
+  height: 90%;
+
+  @media screen and (max-width: 1128px) {
+    overflow: initial;
+    height: 100%;
+
+  }
+
+  @media screen and (max-width: 728px){
+    padding-bottom: 20px;
+  }
 
   @media screen and (max-width: 881px) {
     width: 100%;

@@ -56,6 +56,11 @@ const ProjectStyled = styled.section`
   grid-gap: 1rem;
   padding: 1rem;
 
+  @media screen and (max-width: 1128px) {
+    height: 100%;
+    overflow: initial;
+  } 
+
   .language-container {
     display: flex;
     flex-wrap: wrap;
@@ -90,6 +95,11 @@ const ProjectStyled = styled.section`
     grid-template-rows: repeat(6, 1fr);
     display: grid;
     justify-items: center;
+
+    &::after {
+      content: "br";
+      visibility: hidden;
+    }
   }
 
   @media screen and (max-width: 574px) {
