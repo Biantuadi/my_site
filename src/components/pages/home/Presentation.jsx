@@ -17,13 +17,13 @@ export default function Presentation() {
 
   return (
     <PresentationStyled>
-      <h1>
+      <h2 id="dev">
         Developpeur <span>Web</span>,<br /> A la recherche d’une
         <br /> nouvelle opportunité
-      </h1>
-      <p>
+      </h2>
+      <h1 id="name">
         <span>K</span>evin. <span>B</span>eni. <span>B</span>iantuadi.
-      </p>
+      </h1>
 
       <div className="button">
         <Button label="Voir mon CV" onClick={openCV} /> - Je suis{" "}
@@ -43,7 +43,7 @@ const PresentationStyled = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  h1 {
+  h2#dev {
     font-weight: 500;
     font-size: 50px;
     span {
@@ -71,8 +71,9 @@ const PresentationStyled = styled.div`
     color: ${theme.colors.secondary};
   }
 
-  p {
+  #name {
     font-size: 19px;
+    font-weight: 400;
   }
 
   .button {
