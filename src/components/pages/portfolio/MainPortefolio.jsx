@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import { theme } from "../../../themes";
 import Project from "./Project";
 
 export default function MainPortefolio() {

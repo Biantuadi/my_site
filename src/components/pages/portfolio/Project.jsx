@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import projectsData from "../../../data/data";
 import { theme } from "../../../themes";
@@ -6,11 +6,20 @@ import { theme } from "../../../themes";
 export default function Project() {
   const projects = projectsData;
 
+  useEffect(() => {
+    const decaladge = document.querySelectorAll(".decaladge");
+    decaladge.forEach((decaladge, index) => {
+      decaladge.style.animation = `decaladge-appear 1s ease forwards ${
+        index / 7 + 0.3
+      }s`;
+    });
+  }, []);
+
   return (
-    <ProjectStyled className="projects">
+    <ProjectStyled className="projects ">
       {projects.map((item) => {
         return (
-          <li>
+          <li key={item.id} className="decaladge">
             <img src={item.image} alt="" />
             <div className="gradient">
               <h4>{item.title}</h4>
@@ -45,7 +54,7 @@ const ProjectStyled = styled.section`
     justify-items: center;
   }
 
-  @media screen and (max-width: 478px) {
+  @media screen and (max-width: 574px) {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(12, 1fr);
   }
@@ -63,6 +72,20 @@ const ProjectStyled = styled.section`
     transition: all 0.4s ease-in-out;
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+
+    @keyframes decaladge-appear {
+      0% {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    /* animation: decaladge-appear 1s ease-in-out; */
 
     &:hover {
       transform: scale(1.1);
@@ -123,6 +146,11 @@ const ProjectStyled = styled.section`
     @media screen and (max-width: 905px) {
       width: 200px;
       height: 150px;
+    }
+
+    @media screen and (max-width: 728px) {
+      width: 250px;
+      height: 200px;
     }
   }
 `;

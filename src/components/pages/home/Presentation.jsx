@@ -102,7 +102,7 @@ const PresentationStyled = styled.div`
   }
 
   @media (max-width: 1216px) and (min-width: 995px) {
-    h1 {
+    h2#dev {
       font-size: calc(50px * 0.8);
     }
 
@@ -114,7 +114,7 @@ const PresentationStyled = styled.div`
   @media (max-width: 995px) and (min-width: 768px) {
     width: 100%;
 
-    h1 {
+    h2#dev {
       font-size: calc(50px * 0.7);
     }
 
@@ -130,7 +130,7 @@ const PresentationStyled = styled.div`
     justify-content: flex-end;
     align-items: center;
 
-    h1 {
+    h2#dev {
       font-size: calc(50px * 0.6);
     }
 
