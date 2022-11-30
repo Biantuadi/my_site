@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { theme } from "../../themes";
 
-export default function Button({ label, onClick }) {
-  return <ButtonStyled onClick={onClick}>{label}</ButtonStyled>;
+export default function Button({ label, ...others }) {
+  return <ButtonStyled {...others}>{label}</ButtonStyled>;
 }
 
 const ButtonStyled = styled.button`
@@ -19,4 +19,6 @@ const ButtonStyled = styled.button`
   &:hover {
     background-color: ${theme.colors.primary};
   }
+
+  
 `;
