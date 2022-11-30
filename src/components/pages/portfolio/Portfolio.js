@@ -1,10 +1,23 @@
+import styled from "styled-components";
 import Header from "../../reutisable/header/Header";
+import MainPortefolio from "./MainPortefolio";
 
 export default function Portfolio() {
   return (
-    <div className="portfolio">
+    <PortfolioStyled className="portfolio">
       <Header />
-      <h1>Portfolio</h1>
-    </div>
+      <MainPortefolio />
+    </PortfolioStyled>
   );
 }
+
+const PortfolioStyled = styled.div`
+  height: 100vh;
+  overflow: hidden;
+  font-family:"Poppins", sans-serif;
+
+  @media screen and (max-width: 1128px) {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+`;
