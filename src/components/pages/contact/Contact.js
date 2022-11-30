@@ -1,7 +1,15 @@
 import styled from "styled-components";
 import Header from "../../reutisable/header/Header";
+import Button from "../../reutisable/Button";
+import { theme } from "../../../themes";
 
 export default function Contact() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Thank you for your message!");
+  } 
+
+
   return (
     <ContactStyled className="contact">
       <Header />
@@ -15,7 +23,7 @@ export default function Contact() {
             officiis? Ducimus facere placeat molestiae adipisci reprehenderit
             aliquam doloribus ad sit explicabo mollitia voluptas reiciendis
             doloremque maiores ullam praesentium, eaque obcaecati, distinctio
-            illo! Dolorem, minima?
+            illo! Dolorem, minima? 
           </p>
         </div>
 
@@ -27,6 +35,13 @@ export default function Contact() {
               height="300"
               className="avatar"
             />
+            <h2>Contactez-moi</h2>
+            {/* <div className="input"> */}
+              <input type="text" placeholder="Nom" />
+              <input type="email" placeholder="Email" />
+            {/* </div> */}
+            <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+            <Button label="Envoyer"onClick={handleSubmit} />
           </form>
       </mai>
     </ContactStyled>
@@ -51,21 +66,70 @@ const ContactStyled = styled.div`
 
   .description {
     /* flex: 1; */
-    width: 50%;
+    /* width: 50%; */
     img {
       width: 250px;
       height: 250px;
     }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-top: 1rem;
+      max-width: 550px;
+    }
   }
 
   .formulaire {
-      width: 500px;
+      width: 400px;
       height: 500px;
       background: #fff;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
 
     img {
       width: 100px;
       height: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    input {
+      width: 50%;
+      /* height: 50px; */
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #000;
+      border-radius: 5px;
+
+      &:focus {
+        outline: none;
+        /* border: 1px solid ${theme.colors.primary}; */
+      }
+
+    }
+
+    textarea {
+      width: 50%;
+      height: 100px;
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #000;
+      border-radius: 5px;
+
+    }
+
+    button {
+      width: 50%;
+      margin: 10px;
     }
   }
 `;

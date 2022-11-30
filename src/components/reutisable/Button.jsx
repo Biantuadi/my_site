@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../../../themes";
+import { theme } from "../../themes";
 
 export default function Button({ label, onClick }) {
   return <ButtonStyled onClick={onClick}>{label}</ButtonStyled>;

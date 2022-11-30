@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../../themes";
-import Button from "../../reutisable/header/Button";
+import Button from "../../reutisable/Button";
 import { useTypewriter } from "react-simple-typewriter";
 import SocialMedias from "./SocialMedias";
 
