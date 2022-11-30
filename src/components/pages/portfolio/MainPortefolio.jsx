@@ -33,7 +33,7 @@ const MainStyled = styled.main`
       height: 30%;
       position: fixed;
     }
-    @media screen and (max-width: 905px) {
+    @media screen and (max-width: 1129px) {
       display: none;
     }
   }
