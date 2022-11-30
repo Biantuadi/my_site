@@ -18,5 +18,6 @@ const PortfolioStyled = styled.div`
 
   @media screen and (max-width: 1128px) {
     overflow: auto;
+    overflow-x: hidden;
   }
 `;

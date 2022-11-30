@@ -18,7 +18,7 @@ const MainStyled = styled.main`
   width: 80%;
   margin: 0 auto;
   overflow: hidden;
-  height: 90%;
+  height: 100%;
 
   @media screen and (max-width: 1128px) {
     overflow: initial;
@@ -42,9 +42,21 @@ const MainStyled = styled.main`
       padding-right: 110px;
       height: 30%;
       position: fixed;
+
+      @media screen and (max-width: 1380px){
+        padding-right: 80px;
+      } 
+
+      @media screen and (max-width: 1240px) {
+        padding-right: 50px;
+      }
     }
     @media screen and (max-width: 1129px) {
       display: none;
+
+      /* h1{
+        border-right: none;
+      } */
     }
   }
 `;
