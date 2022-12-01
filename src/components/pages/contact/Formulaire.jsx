@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import emailjs from "@emailjs/browser";
 import Input from "../../reutisable/Input";
 import { theme } from "../../../themes";
+import SendedMessage from "./SendedMessage";
 
 export default function Formulaire() {
   const [name, setName] = useState("");
@@ -14,6 +15,8 @@ export default function Formulaire() {
   const nameError = useRef();
   const emailError = useRef();
   const messageError = useRef();
+
+  const [sended, setSended] = useState(false);
 
   const btn = useRef();
 
@@ -90,6 +93,7 @@ export default function Formulaire() {
             ease: "power4.in",
           });
           console.log(result.text);
+          setSended(true);
           setTimeout(() => {
             setName("");
             setEmail("");
@@ -98,7 +102,6 @@ export default function Formulaire() {
         },
         (error) => {
           console.log(error.text);
-          alert("Une erreur est survenue, veuillez réessayer plus tard");
           window.location.reload();
         }
       );
@@ -152,6 +155,8 @@ export default function Formulaire() {
       <span ref={messageError} className="error"></span>
 
       <BtnContact btn={btn} />
+
+      {sended && <SendedMessage />}
     </FormStyled>
   );
 }
