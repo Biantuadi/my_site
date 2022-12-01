@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { theme } from "../../themes";
 
-export default function Button({ label, disabled, ...others }) {
-  return <ButtonStyled disabled {...others}>{label}</ButtonStyled>;
+export default function Button({ label, ...others }) {
+  return <ButtonStyled {...others}>{label}</ButtonStyled>;
 }
 
 const ButtonStyled = styled.button`

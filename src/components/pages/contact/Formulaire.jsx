@@ -5,9 +5,8 @@ import { gsap } from "gsap";
 import emailjs from "@emailjs/browser";
 import Input from "../../reutisable/Input";
 import { theme } from "../../../themes";
-import SendedMessage from "./SendedMessage";
 
-export default function Formulaire() {
+export default function Formulaire({ setSended }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -15,8 +14,6 @@ export default function Formulaire() {
   const nameError = useRef();
   const emailError = useRef();
   const messageError = useRef();
-
-  const [sended, setSended] = useState(false);
 
   const btn = useRef();
 
@@ -106,18 +103,25 @@ export default function Formulaire() {
         }
       );
 
-    e.target.reset();
+    gsap.to(btn.current, {
+      duration: 1,
+      y: -1500,
+      ease: "power4.in",
+    });
   };
 
   return (
     <FormStyled action="submit" className="formulaire" onSubmit={handleSubmit}>
-      <img
-        src="img/send_mail.webp"
-        alt=""
-        width="300"
-        height="300"
-        className="avatar"
-      />
+      <div className="img_container">
+        <img
+          src="img/send_mail.webp"
+          alt=""
+          width="300"
+          height="300"
+          className="avatar"
+        />
+      </div>
+
       <h2>Contactez-moi</h2>
 
       <Input
@@ -155,8 +159,6 @@ export default function Formulaire() {
       <span ref={messageError} className="error"></span>
 
       <BtnContact btn={btn} />
-
-      {sended && <SendedMessage />}
     </FormStyled>
   );
 }
@@ -165,7 +167,7 @@ const FormStyled = styled.form`
   width: 400px;
   height: 500px;
   background: #fff;
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -173,13 +175,17 @@ const FormStyled = styled.form`
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
-  img {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
+  .img_container {
+    position: relative;
+    width: 100%;
+    /* height: 100%; */
+    img {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: -50px;
+      left: 0;
+    }
   }
 
   textarea {
