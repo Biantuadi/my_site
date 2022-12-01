@@ -4,6 +4,7 @@ import BtnContact from "./BtnContact";
 import { gsap } from "gsap";
 import emailjs from "@emailjs/browser";
 import Input from "../../reutisable/Input";
+import { theme } from "../../../themes";
 
 export default function Formulaire() {
   const [name, setName] = useState("");
@@ -51,7 +52,7 @@ export default function Formulaire() {
       nameError.current.innerHTML = "";
       nameError.current.classList.remove("nameError");
     }
-  
+
     if (message.length < 5 || message.trim() === "") {
       messageError.current.innerHTML =
         "Votre message doit contenir au moins 5 caractères";
@@ -65,7 +66,7 @@ export default function Formulaire() {
       messageError.current.innerHTML = "";
       messageError.current.classList.remove("messageError");
     }
-  
+
     if (
       name.length < 2 ||
       name.trim() === "" ||
@@ -180,6 +181,16 @@ const FormStyled = styled.form`
     margin: 10px;
     border: 1px solid #000;
     border-radius: 5px;
+
+    &:focus {
+      outline: none;
+      border: 1px solid ${theme.colors.secondary};
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    @media screen and (max-width: 728px) {
+      width: 65%;
+    }
   }
 
   .error {
