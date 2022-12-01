@@ -13,8 +13,6 @@ export default function Project() {
       project.style.animation = `project-appear 1s ease  ${
         index / 7 + 0.3
       }s`;
-      // rendre l'opacity à 1 apres la fin de l'animation
-
       
       
       setTimeout(() => {
@@ -33,8 +31,8 @@ export default function Project() {
               <h4>{item.title}</h4>
 
               <div className="language-container">
-                {item.laguages.map((language) => {
-                  return <img src={language } alt="" />;
+                {item.laguages.map((language, index) => {
+                  return <img src={language } alt="language_utilisé" key={index} />;
                 })}
               </div>
 

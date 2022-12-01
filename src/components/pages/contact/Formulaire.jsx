@@ -1,26 +1,108 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { theme } from "../../../themes";
 import Button from "../../reutisable/Button";
 import InputEmail from "./InputEmail";
 import InputName from "./InputName";
+import emailjs from "@emailjs/browser";
+import BtnContact from "./BtnContact";
+import { gsap } from "gsap";
 
 export default function Formulaire() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const nameError = useRef();
+  const emailError = useRef();
+  const messageError = useRef();
+
+  const btn = useRef();
+
+  useEffect(() => {
+    if (name === "" || email === "" || message === "") {
+      btn.current.disabled = true;
+      btn.current.style.cursor = "not-allowed";
+      btn.current.classList.add("disabled");
+      btn.current.classList.remove("enabled");
+      btn.current.classList.remove("flesh");
+      btn.current.innerHTML = "Veuillez remplir tous les champs";
+    } else {
+      btn.current.disabled = false;
+      btn.current.style.cursor = "pointer";
+      btn.current.classList.remove("disabled");
+      btn.current.classList.add("enabled");
+      btn.current.innerHTML = `Envoyer`;
+    }
+  }, [name, email, message]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name && email && message) {
-      alert("Message envoyé");
+    if (name.length < 2 || name.trim() === "") {
+      nameError.current.innerHTML = "Veuillez entrer un nom valide";
+      nameError.current.classList.add("nameError");
+      if (message.current !== "") {
+        messageError.current.innerHTML = "";
+        messageError.current.classList.remove("messageError");
+      }
+      return;
     } else {
-      alert("Veuillez remplir tous les champs");
+      nameError.current.innerHTML = "";
+      nameError.current.classList.remove("nameError");
     }
+
+    if (message.length < 5 || message.trim() === "") {
+      messageError.current.innerHTML =
+        "Votre message doit contenir au moins 5 caractères";
+      messageError.current.classList.add("messageError");
+      if (name.current !== "") {
+        nameError.current.innerHTML = "";
+        nameError.current.classList.remove("messageError");
+      }
+      return;
+    } else {
+      messageError.current.innerHTML = "";
+      messageError.current.classList.remove("messageError");
+    }
+
+    if (
+      name.length < 2 ||
+      name.trim() === "" ||
+      message.length < 5 ||
+      message.trim() === ""
+    )
+      return;
+
+    // emailjs
+    //   .sendForm(
+    //     "service_19f7ruw",
+    //     "template_lke8xqq",
+    //     e.target,
+    //     "iST1Sm_IMw2nRU0yh"
+    //   )
+    //   .then(
+    //     (result) => {
+    //       console.log(result.text);
+    //       setName("");
+    //       setEmail("");
+    //       setMessage("");
+    //     },
+    //     (error) => {
+    //       console.log(error.text);
+    //     }
+    //   );
+
+    gsap.to(btn.current, {
+      duration: 1,
+      y: -1500,
+      ease: "power4.in",
+    });
+
+    e.target.reset();
   };
 
   return (
-    <FormStyled action="submit" className="formulaire">
+    <FormStyled action="submit" className="formulaire" onSubmit={handleSubmit}>
       <img
         src="img/send_mail.webp"
         alt=""
@@ -31,19 +113,23 @@ export default function Formulaire() {
       <h2>Contactez-moi</h2>
 
       <InputName name={name} setName={setName} />
+      <span ref={nameError} className="error"></span>
       <InputEmail email={email} setEmail={setEmail} />
+      <span ref={emailError} className="error"></span>
 
       <textarea
-        name=""
-        id=""
+        name="message"
+        id="message"
         cols="30"
         rows="10"
-        placeholder="Message"
+        placeholder="Votre message"
         required={true}
         onChange={(e) => setMessage(e.target.value)}
         value={message}
       ></textarea>
-      <Button type={"submit"} label="Envoyer" onClick={handleSubmit} />
+      <span ref={messageError} className="error"></span>
+
+      <BtnContact btn={btn} />
     </FormStyled>
   );
 }
@@ -78,18 +164,16 @@ const FormStyled = styled.form`
     border-radius: 5px;
   }
 
-  button {
-    width: 50%;
-    margin-top: 10px;
+  .error {
+    visibility: hidden;
   }
 
-  .disabled {
-    background-color: #01595eab;
-    cursor: not-allowed;
-
-    /* color: #000; */
-
-    /* background-color: grey;
-    cursor: not-allowed; */
+  .messageError,
+  .nameError {
+    color: red;
+    font-size: 0.8em;
+    margin-top: -7px;
+    visibility: visible;
+    // text-align: center;
   }
 `;

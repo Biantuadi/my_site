@@ -6,22 +6,22 @@ export default function Navbar() {
   return (
     <NavbarStyled className="nav">
       <li>
-        <NavLink to="/" activeClassName="active">
+        <NavLink to="/" activeclassname="active">
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to="/about" activeClassName="active">
+        <NavLink to="/about" activeclassname="active">
           About
         </NavLink>
       </li>
       <li>
-        <NavLink to="/portfolio" activeClassName="active">
+        <NavLink to="/portfolio" activeclassname="active">
           Portfolio
         </NavLink>
       </li>
       <li>
-        <NavLink to="/contact" activeClassName="active">
+        <NavLink to="/contact" activeclassname="active">
           Contact
         </NavLink>
       </li>
