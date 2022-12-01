@@ -1,3 +1,3 @@
-# https://www.robotstxt.org/robotstxt.html
+# https://biantuadi.github.io/robots.txt
 User-agent: *
-Disallow:
+Sitemap: https://kevinbiant.vercel.app/sitemap.xml
