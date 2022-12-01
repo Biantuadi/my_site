@@ -1,16 +1,14 @@
 import styled from "styled-components";
 import { theme } from "../../../themes";
 
-export default function BtnContact({  btn }) {
-
-
+export default function BtnContact({ btn }) {
   return (
     <BtnContactStyled
       ref={btn}
       type={"submit"}
       disabled={false}
       className="enabled"
-      onMouseEnter={() => btn.current.classList.add("flesh")}
+      // onMouseEnter={() => btn.current.classList.add("flesh")}
     ></BtnContactStyled>
   );
 }
@@ -43,9 +41,7 @@ const BtnContactStyled = styled.button`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
 
-  &.flesh {
     @keyframes flesh {
       0% {
         clip-path: polygon(
@@ -80,6 +76,10 @@ const BtnContactStyled = styled.button`
         font-size: 10px;
       }
     }
-    animation: flesh 1s forwards;
+    animation: flesh 1s forwards 0.8s;
   }
+
+  /* &.flesh { */
+
+  /* } */
 `;

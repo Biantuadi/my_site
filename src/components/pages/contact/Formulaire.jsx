@@ -24,8 +24,8 @@ export default function Formulaire() {
       btn.current.style.animation = "none";
       btn.current.classList.add("disabled");
       btn.current.classList.remove("enabled");
-      btn.current.classList.remove("flesh");
-      btn.current.innerHTML = "Veuillez remplir tous les champs";
+      // btn.current.classList.remove("flesh");
+      btn.current.innerHTML = "Tous les champs sont obligatoires";
     } else {
       btn.current.disabled = false;
       btn.current.style.cursor = "pointer";
@@ -84,21 +84,24 @@ export default function Formulaire() {
       )
       .then(
         (result) => {
+          gsap.to(btn.current, {
+            duration: 1,
+            y: -1500,
+            ease: "power4.in",
+          });
           console.log(result.text);
-          setName("");
-          setEmail("");
-          setMessage("");
+          setTimeout(() => {
+            setName("");
+            setEmail("");
+            setMessage("");
+          }, 1000);
         },
         (error) => {
           console.log(error.text);
+          alert("Une erreur est survenue, veuillez réessayer plus tard");
+          window.location.reload();
         }
       );
-
-    gsap.to(btn.current, {
-      duration: 1,
-      y: -1500,
-      ease: "power4.in",
-    });
 
     e.target.reset();
   };
