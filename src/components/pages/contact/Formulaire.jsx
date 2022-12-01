@@ -1,12 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { theme } from "../../../themes";
-import Button from "../../reutisable/Button";
-import InputEmail from "./InputEmail";
-import InputName from "./InputName";
-import emailjs from "@emailjs/browser";
 import BtnContact from "./BtnContact";
 import { gsap } from "gsap";
+import emailjs from "@emailjs/browser";
+import Input from "../../reutisable/Input";
 
 export default function Formulaire() {
   const [name, setName] = useState("");
@@ -38,6 +35,7 @@ export default function Formulaire() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (name.length < 2 || name.trim() === "") {
       nameError.current.innerHTML = "Veuillez entrer un nom valide";
       nameError.current.classList.add("nameError");
@@ -50,7 +48,7 @@ export default function Formulaire() {
       nameError.current.innerHTML = "";
       nameError.current.classList.remove("nameError");
     }
-
+  
     if (message.length < 5 || message.trim() === "") {
       messageError.current.innerHTML =
         "Votre message doit contenir au moins 5 caractères";
@@ -64,7 +62,7 @@ export default function Formulaire() {
       messageError.current.innerHTML = "";
       messageError.current.classList.remove("messageError");
     }
-
+  
     if (
       name.length < 2 ||
       name.trim() === "" ||
@@ -73,24 +71,24 @@ export default function Formulaire() {
     )
       return;
 
-    // emailjs
-    //   .sendForm(
-    //     "service_19f7ruw",
-    //     "template_lke8xqq",
-    //     e.target,
-    //     "iST1Sm_IMw2nRU0yh"
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text);
-    //       setName("");
-    //       setEmail("");
-    //       setMessage("");
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //     }
-    //   );
+    emailjs
+      .sendForm(
+        "service_19f7ruw",
+        "template_lke8xqq",
+        e.target,
+        "iST1Sm_IMw2nRU0yh"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setName("");
+          setEmail("");
+          setMessage("");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
 
     gsap.to(btn.current, {
       duration: 1,
@@ -112,9 +110,26 @@ export default function Formulaire() {
       />
       <h2>Contactez-moi</h2>
 
-      <InputName name={name} setName={setName} />
+      <Input
+        type="name"
+        id="name"
+        name="name"
+        placeholder="Nom"
+        onChange={(e) => setName(e.target.value)}
+        value={name}
+        required={true}
+      />
       <span ref={nameError} className="error"></span>
-      <InputEmail email={email} setEmail={setEmail} />
+
+      <Input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Email"
+        onChange={(e) => setEmail(e.target.value)}
+        value={email}
+        required={true}
+      />
       <span ref={emailError} className="error"></span>
 
       <textarea

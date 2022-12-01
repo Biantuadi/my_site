@@ -1,12 +1,8 @@
-import React from "react";
 import styled from "styled-components";
 import { theme } from "../../../themes";
-import { gsap } from "gsap";
 
-export default function BtnContact({ btn, children, ...props }) {
-  const handleMouseEnter = () => {
-    btn.current.classList.add("flesh");
-  };
+export default function BtnContact({  btn }) {
+
 
   return (
     <BtnContactStyled
@@ -14,7 +10,7 @@ export default function BtnContact({ btn, children, ...props }) {
       type={"submit"}
       disabled={false}
       className="enabled"
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={() => btn.current.classList.add("flesh")}
     ></BtnContactStyled>
   );
 }
@@ -84,10 +80,5 @@ const BtnContactStyled = styled.button`
       }
     }
     animation: flesh 1s forwards;
-  }
-
-  .fas.fa-paper-plane {
-    transform: rotate(-45deg);
-    font-size: 23px;
   }
 `;
