@@ -33,6 +33,7 @@ const BtnContactStyled = styled.button`
     width: 50%;
     border-radius: 0;
     height: auto;
+    animation: none;
   }
 
   &.enabled {

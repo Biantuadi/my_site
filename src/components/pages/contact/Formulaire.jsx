@@ -20,6 +20,7 @@ export default function Formulaire() {
     if (name === "" || email === "" || message === "") {
       btn.current.disabled = true;
       btn.current.style.cursor = "not-allowed";
+      btn.current.style.animation = "none";
       btn.current.classList.add("disabled");
       btn.current.classList.remove("enabled");
       btn.current.classList.remove("flesh");
@@ -27,6 +28,8 @@ export default function Formulaire() {
     } else {
       btn.current.disabled = false;
       btn.current.style.cursor = "pointer";
+      // remove style animation
+      btn.current.removeAttribute("style");
       btn.current.classList.remove("disabled");
       btn.current.classList.add("enabled");
       btn.current.innerHTML = `Envoyer`;

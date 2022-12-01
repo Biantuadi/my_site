@@ -18,4 +18,12 @@ const MainContactStyled = styled.main`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 1150px){
+    width: 90%;
+  }
+
+  @media screen and (max-width: 900px){
+    justify-content: center;
+  }
 `;

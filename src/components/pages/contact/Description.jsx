@@ -18,15 +18,31 @@ export default function Description() {
 }
 
 const DescriptionSteled = styled.div`
-img {
-      width: 250px;
-      height: 250px;
+  img {
+    width: 250px;
+    height: 250px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+    max-width: 550px;
+  }
+  @media screen and (max-width: 1150px) {
+    font-size: 1rem;
+
+    img {
+      width: 200px;
+      height: 200px;
     }
 
     p {
-      font-size: 1.1rem;
-      line-height: 1.5;
-      margin-top: 1rem;
-      max-width: 550px;
+      font-size: 1rem;
     }
+  }
+
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 `;
