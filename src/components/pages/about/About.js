@@ -13,6 +13,7 @@ export default function About() {
           height="300"
           className="avatar"
         />
+        <h4>Come back later, I'm still working on this page</h4>
       </main>
     </AboutStyled>
   );
