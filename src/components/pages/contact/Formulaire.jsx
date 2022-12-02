@@ -167,7 +167,7 @@ const FormStyled = styled.form`
   width: 400px;
   height: 500px;
   background: #fff;
-  /* position: relative; */
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -175,17 +175,48 @@ const FormStyled = styled.form`
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+
+  
+  @keyframes fromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    } 100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  animation: fromRight 1s ease-in-out forwards 1.7s;
+
+  @media (max-width: 900px) {
+    animation:fromRight 1s ease-in-out forwards 1s;
+  }
+  
   .img_container {
     position: relative;
     width: 100%;
-    /* height: 100%; */
     img {
-      width: 100px;
-      height: 100px;
+      width: 97px;
+      height: 97px;
       position: absolute;
       top: -50px;
       left: 0;
     }
+
+    @keyframes agitate {
+      0% {
+        transform: rotate(0deg);
+      } 50% {
+        transform: rotate(10deg);
+      } 100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    animation: agitate 1s ease-in-out infinite;
   }
 
   textarea {
@@ -217,6 +248,5 @@ const FormStyled = styled.form`
     font-size: 0.8em;
     margin-top: -7px;
     visibility: visible;
-    // text-align: center;
   }
 `;

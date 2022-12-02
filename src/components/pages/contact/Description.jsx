@@ -21,6 +21,18 @@ const DescriptionSteled = styled.div`
   img {
     width: 250px;
     height: 250px;
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    } 100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  animation: slideIn 1s ease-in-out forwards;
   }
 
   p {
@@ -28,6 +40,17 @@ const DescriptionSteled = styled.div`
     line-height: 1.5;
     margin-top: 1rem;
     max-width: 550px;
+    opacity: 0;
+
+    @keyframes appearProgressively {
+      0% {
+        opacity: 0;
+      } 100% {
+        opacity: 1;
+      }
+    }
+
+    animation: appearProgressively 1s ease-in-out forwards 1s;
   }
   @media screen and (max-width: 1150px) {
     font-size: 1rem;
