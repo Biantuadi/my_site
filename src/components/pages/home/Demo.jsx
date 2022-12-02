@@ -1,28 +1,15 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 export default function Demo() {
-  // Faire apparaître une div après un délai de quelques 5 secondes
-
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setShow(true);
-    }, 2000);
-  });
-
   return (
     <>
-      {show && (
-        <DemoStyled>
-          <img
-            src="img/demo_crazee_burger.gif"
-            alt="demo_crazee_burger"
-            className="demo_crazee_burger"
-          />
-        </DemoStyled>
-      )}
+      <DemoStyled>
+        <img
+          src="img/demo_crazee_burger.gif"
+          alt="demo_crazee_burger"
+          className="demo_crazee_burger"
+        />
+      </DemoStyled>
     </>
   );
 }
@@ -38,10 +25,11 @@ const DemoStyled = styled.div`
   background-color: white;
   text-align: center;
   z-index: -1;
-  animation: demo_crazee_burger 2s ease-in-out;
+  animation: demo_crazee_burger 2s ease-in-out forwards 1s;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
 
   @keyframes demo_crazee_burger {
     0% {
@@ -93,19 +81,19 @@ const DemoStyled = styled.div`
 
     @keyframes responsive_animation {
       0% {
-        transform: scale( 0.5 );
+        transform: scale(0.5);
         opacity: 1;
       }
       50% {
-        transform: scale( 1.2 );
+        transform: scale(1.2);
         opacity: 1;
-      } 
+      }
       100% {
-        transform: scale( 1);
+        transform: scale(1);
         opacity: 1;
       }
     }
-    animation: responsive_animation 2s ease-in-out;
+    animation: responsive_animation 2s ease-in-out forwards 1.4s;
   }
 
   @media (max-width: 476px) {
@@ -115,22 +103,22 @@ const DemoStyled = styled.div`
 
     @keyframes responsive_animation {
       0% {
-        transform: scale( 0.5 );
+        transform: scale(0.5);
         opacity: 1;
       }
       50% {
-        transform: scale( 1.2 );
+        transform: scale(1.2);
         opacity: 1;
-      } 
+      }
       100% {
-        transform: scale( 1);
+        transform: scale(1);
         opacity: 1;
       }
     }
-    animation: responsive_animation 1s ease-in-out;
+    animation: responsive_animation 1s ease-in-out forwards 1.4s;
   }
 
-  @media screen and (max-width: 860px) and  (max-height: 700px) {
+  @media screen and (max-width: 860px) and (max-height: 700px) {
     display: none;
   }
 `;

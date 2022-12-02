@@ -5,7 +5,7 @@ export default function About() {
   return (
     <AboutStyled className="about">
       <Header />
-      <mai className="about_main">
+      <main className="About_main">
         <img
           src="img/say_hi.webp"
           alt=""
@@ -13,7 +13,7 @@ export default function About() {
           height="300"
           className="avatar"
         />
-      </mai>
+      </main>
     </AboutStyled>
   );
 }
@@ -24,7 +24,7 @@ const AboutStyled = styled.div`
   display: flex;
   flex-direction: column;
 
-  .about_main {
+  .About_main {
     width: 90%;
     margin: 0 auto;
     border-left: none;

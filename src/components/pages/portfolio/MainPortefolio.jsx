@@ -4,7 +4,7 @@ import Project from "./Project";
 export default function MainPortefolio() {
   return (
     <MainStyled>
-      <div className="title">
+      <div className="Title">
         <h1>Portfolio</h1>
       </div>
 
@@ -34,7 +34,7 @@ const MainStyled = styled.main`
     width: 100%;
   }
 
-  .title {
+  .Title {
     flex: 1;
     text-align: center;
     h1 {
