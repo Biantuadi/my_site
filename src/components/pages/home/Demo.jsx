@@ -93,7 +93,7 @@ const DemoStyled = styled.div`
         opacity: 1;
       }
     }
-    animation: responsive_animation 2s ease-in-out;
+    animation: responsive_animation 2s ease-in-out forwards 1.4s;
   }
 
   @media (max-width: 476px) {
@@ -115,7 +115,7 @@ const DemoStyled = styled.div`
         opacity: 1;
       }
     }
-    animation: responsive_animation 1s ease-in-out;
+    animation: responsive_animation 1s ease-in-out forwards 1.4s;
   }
 
   @media screen and (max-width: 860px) and (max-height: 700px) {

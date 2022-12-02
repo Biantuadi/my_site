@@ -76,7 +76,7 @@ const BtnContactStyled = styled.button`
         font-size: 10px;
       }
     }
-    animation: flesh 1s forwards 0.8s;
+    animation: flesh 1s forwards 0.4s;
   }
 
   /* &.flesh { */

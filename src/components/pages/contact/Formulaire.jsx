@@ -178,12 +178,12 @@ const FormStyled = styled.form`
   opacity: 0;
   transition: all 0.5s ease-in-out;
 
-  
   @keyframes fromRight {
     0% {
       transform: translateX(100%);
       opacity: 0;
-    } 100% {
+    }
+    100% {
       transform: translateX(0);
       opacity: 1;
     }
@@ -192,9 +192,9 @@ const FormStyled = styled.form`
   animation: fromRight 1s ease-in-out forwards 1.7s;
 
   @media (max-width: 900px) {
-    animation:fromRight 1s ease-in-out forwards 1s;
+    animation: fromRight 1s ease-in-out forwards 0.3s;
   }
-  
+
   .img_container {
     position: relative;
     width: 100%;
@@ -209,9 +209,11 @@ const FormStyled = styled.form`
     @keyframes agitate {
       0% {
         transform: rotate(0deg);
-      } 50% {
+      }
+      50% {
         transform: rotate(10deg);
-      } 100% {
+      }
+      100% {
         transform: rotate(0deg);
       }
     }
