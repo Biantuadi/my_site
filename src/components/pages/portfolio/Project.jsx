@@ -6,15 +6,11 @@ import { theme } from "../../../themes";
 export default function Project() {
   const projects = projectsData;
 
-
   useEffect(() => {
     const projects = document.querySelectorAll(".project");
     projects.forEach((project, index) => {
-      project.style.animation = `project-appear 1s ease  ${
-        index / 7 + 0.3
-      }s`;
-      
-      
+      project.style.animation = `project-appear 1s ease  ${index / 7 + 0.3}s`;
+
       setTimeout(() => {
         project.style.opacity = 1;
       }, 1500);
@@ -22,20 +18,22 @@ export default function Project() {
   }, []);
 
   return (
-    <ProjectStyled className="projects ">
+    <ProjectStyled className="projects">
       {projects.map((item) => {
         return (
           <li key={item.id} className="project">
-            <img src={item.image} alt="" />
+            <img src={item.image} alt={item.title} className="imgProject" />
+
             <div className="gradient">
               <h4>{item.title}</h4>
 
               <div className="language-container">
                 {item.laguages.map((language, index) => {
-                  return <img src={language } alt="language_utilisé" key={index} />;
+                  return (
+                    <img src={language} alt="language_utilisé" key={index} />
+                  );
                 })}
               </div>
-
             </div>
           </li>
         );
@@ -57,7 +55,7 @@ const ProjectStyled = styled.section`
   @media screen and (max-width: 1128px) {
     height: 100%;
     overflow: initial;
-  } 
+  }
 
   .language-container {
     display: flex;
@@ -65,21 +63,19 @@ const ProjectStyled = styled.section`
     gap: 0.5rem;
     margin: 17px 0rem 5px 5px;
 
-    
-
     @keyframes rotate {
       0% {
         transform: rotate(0deg);
-      } 100% {
+      }
+      100% {
         transform: rotate(360deg);
       }
     }
 
-    img{
+    img {
       width: 20px;
       height: 20px;
       animation: rotate 10s linear infinite;
-
     }
   }
 
@@ -122,7 +118,11 @@ const ProjectStyled = styled.section`
     transition: all 0.4s ease-in-out;
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    /* opacity:0; */
+    overflow: hidden;
+
+    .imgProject {
+      transition: all 0.4s ease-in-out;
+    }
 
     @keyframes project-appear {
       0% {
@@ -137,7 +137,7 @@ const ProjectStyled = styled.section`
 
     /* animation: project-appear 1s ease-in-out; */
 
-    &:hover {
+    &:hover .imgProject {
       transform: scale(1.1);
     }
 
