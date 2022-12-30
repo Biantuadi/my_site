@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import styled from "styled-components";
 import projectsData from "../../../data/projects";
 import { theme } from "../../../themes";
@@ -6,16 +5,16 @@ import { theme } from "../../../themes";
 export default function Project() {
   const projects = projectsData;
 
-  useEffect(() => {
-    const projects = document.querySelectorAll(".project");
-    projects.forEach((project, index) => {
-      project.style.animation = `project-appear 1s ease  ${index / 7 + 0.3}s`;
+  // React.useEffect(() => {
+  //   const projects = document.querySelectorAll(".project");
+  //   projects.forEach((project, index) => {
+  //     project.style.animation = `project-appear 1s ease  ${index / 7 + 0.3}s`;
 
-      setTimeout(() => {
-        project.style.opacity = 1;
-      }, 1500);
-    });
-  }, []);
+  //     setTimeout(() => {
+  //       project.style.opacity = 1;
+  //     }, 1500);
+  //   });
+  // }, []);
 
   return (
     <ProjectStyled className="projects">
@@ -107,6 +106,19 @@ const ProjectStyled = styled.section`
 
   .project {
     opacity: 0;
+
+    @keyframes fromBottom {
+      0% {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    animation: fromBottom 1s ease-in-out forwards;
   }
 
   li {
